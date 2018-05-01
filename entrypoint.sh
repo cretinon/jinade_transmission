@@ -6,4 +6,6 @@ if [ "a$VPN_GW" != "a" ]; then
     route add -net $WORKER_LAN gw 172.17.0.1
 fi
 
-/usr/bin/transmission-daemon --foreground --config-dir /etc/transmission-daemon/ --log-debug
+if [ "a$1" = "a" ]; then
+	/usr/bin/transmission-daemon --foreground --config-dir /etc/transmission-daemon/ --log-debug
+fi
